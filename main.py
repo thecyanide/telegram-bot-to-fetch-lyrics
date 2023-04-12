@@ -25,15 +25,14 @@ async def cock(client, message):
         print (current_song)
         current_lyrics = lyr.lyrics(current_song)
         await message.reply(current_lyrics)
-        await message.reply("You must wait 15 seconds before making another request or else daddy telegram will slap my ass ):")
-        time.sleep(15)
+        time.sleep(5)
         await message.reply("You can make another request")
 
     except FloodWait as e:
         await asyncio.sleep(e.value)
         
     except MessageTooLong:
-        await message.reply("song lyrics are too long. Thats what she said.")
+        await message.reply("song lyrics are too long.")
 
 
 
